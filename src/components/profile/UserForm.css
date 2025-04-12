@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background: url('https://images.unsplash.com/photo-1504196606672-aef5c9cefc92') no-repeat center center/cover;
+  color: white;
+  min-height: 100vh;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  font-size: 1.1rem;
+  margin-top: 20px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+.signup-box {
+  background: rgba(21, 101, 192, 0.85);
+  padding: 40px;
+  border-radius: 20px;
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+  margin-top: 80px;
+}
+
+.signup-box h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 1.8rem;
+  color: #fff;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"] {
+  width: 100%;
+  padding: 14px 18px;
+  margin-bottom: 16px;
+  border: none;
+  border-radius: 25px;
+  outline: none;
+  font-size: 1rem;
+  color: #333;
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 14px;
+  font-size: 1rem;
+  background-color: #ffffff;
+  color: #0d47a1;
+  font-weight: 700;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button[type="submit"]:hover {
+  background-color: #e3e3e3;
+}
+
+footer {
+  margin-top: 60px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #fff;
+  line-height: 1.6;
+}
+
+footer div {
+  margin-top: 6px;
+}

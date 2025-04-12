@@ -1,0 +1,273 @@
+// src/utils/dummyResponse.js
+
+
+// export const dummyResponse = {
+//   flights: [
+//     {
+//       airline: 'IndiGo',
+//       airlineLogo: 'https://upload.wikimedia.org/wikipedia/en/8/88/IndiGo_Logo.svg',
+//       price: '₹5,200',
+//       priceValue: 5200,
+//       totalDuration: 120,
+//       stops: 0,
+//       legs: [
+//         {
+//           origin: 'DEL',
+//           destination: 'BOM',
+//           departure: '2025-04-10T08:00:00Z',
+//           arrival: '2025-04-10T10:00:00Z',
+//           durationInMinutes: 120,
+//           stopCount: 0
+//         }
+//       ]
+//     },
+//     // Add 9 more
+//   ],
+//   filters: {
+//     carriers: ['IndiGo', 'Air India', 'Vistara'],
+//     price: { min: 1000, max: 1500 }
+//   }
+// };
+
+  
+export const dummyResponse = {
+    flights: [
+      {
+        airline: "Gulf Air",
+        airlineLogo: "https://logos.skyscnr.com/images/airlines/favicon/GF.png",
+        totalDuration: 520,
+        departureTime: "2024-12-02T21:35:00",
+        stops: 1,
+        price: "₹26,063",
+        legs: [
+          {
+            origin: "DEL",
+            destination: "BAH",
+            departure: "2024-12-02T21:35:00",
+            arrival: "2024-12-02T23:55:00",
+            durationInMinutes: 290,
+            stopCount: 0,
+          },
+          {
+            origin: "BAH",
+            destination: "RUH",
+            departure: "2024-12-03T02:25:00",
+            arrival: "2024-12-03T03:45:00",
+            durationInMinutes: 80,
+            stopCount: 0,
+          },
+        ],
+      },
+      {
+        airline: "Air India",
+        airlineLogo: "https://logos.skyscnr.com/images/airlines/favicon/AI.png",
+        totalDuration: 180,
+        departureTime: "2024-12-02T10:00:00",
+        stops: 0,
+        price: "₹12,499",
+        legs: [
+          {
+            origin: "DEL",
+            destination: "BOM",
+            departure: "2024-12-02T10:00:00",
+            arrival: "2024-12-02T13:00:00",
+            durationInMinutes: 180,
+            stopCount: 0,
+          },
+        ],
+      },
+      {
+        airline: "IndiGo",
+        airlineLogo: "https://logos.skyscnr.com/images/airlines/favicon/6E.png",
+        totalDuration: 210,
+        departureTime: "2024-12-02T15:30:00",
+        stops: 0,
+        price: "₹10,799",
+        legs: [
+          {
+            origin: "DEL",
+            destination: "BLR",
+            departure: "2024-12-02T15:30:00",
+            arrival: "2024-12-02T19:00:00",
+            durationInMinutes: 210,
+            stopCount: 0,
+          },
+        ],
+      },
+      {
+        airline: "Vistara",
+        airlineLogo: "https://logos.skyscnr.com/images/airlines/favicon/UK.png",
+        totalDuration: 150,
+        departureTime: "2024-12-02T06:00:00",
+        stops: 0,
+        price: "₹11,399",
+        legs: [
+          {
+            origin: "DEL",
+            destination: "AMD",
+            departure: "2024-12-02T06:00:00",
+            arrival: "2024-12-02T08:30:00",
+            durationInMinutes: 150,
+            stopCount: 0,
+          },
+        ],
+      },
+      {
+        airline: "SpiceJet",
+        airlineLogo: "https://logos.skyscnr.com/images/airlines/favicon/SG.png",
+        totalDuration: 170,
+        departureTime: "2024-12-02T07:00:00",
+        stops: 1,
+        price: "₹9,999",
+        legs: [
+          {
+            origin: "DEL",
+            destination: "JAI",
+            departure: "2024-12-02T07:00:00",
+            arrival: "2024-12-02T08:00:00",
+            durationInMinutes: 60,
+            stopCount: 0,
+          },
+          {
+            origin: "JAI",
+            destination: "BOM",
+            departure: "2024-12-02T09:00:00",
+            arrival: "2024-12-02T10:50:00",
+            durationInMinutes: 110,
+            stopCount: 0,
+          },
+        ],
+      },
+      {
+        airline: "GoAir",
+        airlineLogo: "https://logos.skyscnr.com/images/airlines/favicon/G8.png",
+        totalDuration: 200,
+        departureTime: "2024-12-02T13:15:00",
+        stops: 0,
+        price: "₹8,750",
+        legs: [
+          {
+            origin: "DEL",
+            destination: "HYD",
+            departure: "2024-12-02T13:15:00",
+            arrival: "2024-12-02T16:35:00",
+            durationInMinutes: 200,
+            stopCount: 0,
+          },
+        ],
+      },
+      {
+        airline: "Emirates",
+        airlineLogo: "https://logos.skyscnr.com/images/airlines/favicon/EK.png",
+        totalDuration: 720,
+        departureTime: "2024-12-02T04:00:00",
+        stops: 1,
+        price: "₹34,200",
+        legs: [
+          {
+            origin: "DEL",
+            destination: "DXB",
+            departure: "2024-12-02T04:00:00",
+            arrival: "2024-12-02T07:00:00",
+            durationInMinutes: 180,
+            stopCount: 0,
+          },
+          {
+            origin: "DXB",
+            destination: "JFK",
+            departure: "2024-12-02T09:30:00",
+            arrival: "2024-12-02T14:00:00",
+            durationInMinutes: 540,
+            stopCount: 0,
+          },
+        ],
+      },
+      {
+        airline: "Qatar Airways",
+        airlineLogo: "https://logos.skyscnr.com/images/airlines/favicon/QR.png",
+        totalDuration: 640,
+        departureTime: "2024-12-02T23:00:00",
+        stops: 1,
+        price: "₹30,850",
+        legs: [
+          {
+            origin: "DEL",
+            destination: "DOH",
+            departure: "2024-12-02T23:00:00",
+            arrival: "2024-12-03T01:30:00",
+            durationInMinutes: 150,
+            stopCount: 0,
+          },
+          {
+            origin: "DOH",
+            destination: "LHR",
+            departure: "2024-12-03T03:30:00",
+            arrival: "2024-12-03T10:40:00",
+            durationInMinutes: 490,
+            stopCount: 0,
+          },
+        ],
+      },
+      {
+        airline: "Lufthansa",
+        airlineLogo: "https://logos.skyscnr.com/images/airlines/favicon/LH.png",
+        totalDuration: 660,
+        departureTime: "2024-12-02T21:45:00",
+        stops: 1,
+        price: "₹36,700",
+        legs: [
+          {
+            origin: "DEL",
+            destination: "FRA",
+            departure: "2024-12-02T21:45:00",
+            arrival: "2024-12-03T01:45:00",
+            durationInMinutes: 240,
+            stopCount: 0,
+          },
+          {
+            origin: "FRA",
+            destination: "ORD",
+            departure: "2024-12-03T05:30:00",
+            arrival: "2024-12-03T09:30:00",
+            durationInMinutes: 420,
+            stopCount: 0,
+          },
+        ],
+      },
+      {
+        airline: "British Airways",
+        airlineLogo: "https://logos.skyscnr.com/images/airlines/favicon/BA.png",
+        totalDuration: 690,
+        departureTime: "2024-12-02T22:00:00",
+        stops: 1,
+        price: "₹33,500",
+        legs: [
+          {
+            origin: "DEL",
+            destination: "LHR",
+            departure: "2024-12-02T22:00:00",
+            arrival: "2024-12-03T02:00:00",
+            durationInMinutes: 240,
+            stopCount: 0,
+          },
+          {
+            origin: "LHR",
+            destination: "JFK",
+            departure: "2024-12-03T06:00:00",
+            arrival: "2024-12-03T10:30:00",
+            durationInMinutes: 390,
+            stopCount: 0,
+          },
+        ],
+      }
+    ],
+    filters: {
+      carriers: ["Gulf Air", "Air India", "IndiGo", "Vistara", "SpiceJet", "GoAir", "Emirates", "Qatar Airways", "Lufthansa", "British Airways"],
+      stops: [0, 1],
+      price: {
+        min: 8750,
+        max: 36700,
+      },
+    },
+  };
+  

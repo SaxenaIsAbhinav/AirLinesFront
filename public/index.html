@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>React App</title>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+
+    <script>
+      const faqData = [
+        {
+          keywords: ["book"],
+          response: "To book a flight, go to the 'Book Tickets' page, enter your travel details, select your flight, and proceed with payment.",
+          suggestions: [
+            { text: "Can I book round trips?", response: "Yes, round trip bookings are supported. Just choose 'Round Trip' on the booking page." },
+            { text: "What payment methods are accepted?", response: "We accept credit/debit cards, UPI, net banking, and wallets like PayTM & PhonePe." },
+            { text: "Can I choose my seat?", response: "Absolutely! You can select a seat during booking or via 'Manage Booking'." }
+          ]
+        },
+        {
+    keywords: ["hi", "hello", "hey"],
+    response: "Hello there! 👋 I'm SkyEase Assistant. How can I help you today?",
+    suggestions: [
+      { text: "How to book a flight?", response: "To book a flight, go to the 'Book Tickets' page, enter your travel details, select your flight, and proceed with payment." },
+      { text: "How to cancel a flight?", response: "Visit 'My Bookings', select the flight you want to cancel, and follow the instructions." },
+      { text: "Can I reschedule my flight?", response: "Yes, you can reschedule under 'Manage Booking'. Charges may apply based on fare rules." },
+      { text: "Talk to support", response: "Sure! You can reach support at 1800-123-4567 or use our live chat from 9am to 9pm IST." }
+    ]
+  },
+  {
+    keywords: ["hi", "hello", "hey"],
+    response: "Hello there! 👋 I'm SkyEase Assistant. How can I help you today?",
+    suggestions: [
+      { text: "How to book a flight?", response: "To book a flight, go to the 'Book Tickets' page, enter your travel details, select your flight, and proceed with payment." },
+      { text: "How to cancel a flight?", response: "Visit 'My Bookings', select the flight you want to cancel, and follow the instructions." },
+      { text: "Can I reschedule my flight?", response: "Yes, you can reschedule under 'Manage Booking'. Charges may apply based on fare rules." },
+      { text: "Talk to support", response: "Sure! You can reach support at 1800-123-4567 or use our live chat from 9am to 9pm IST." }
+    ]
+  },
+        {
+          keywords: ["cancel", "cancellation"],
+          response: "To cancel a ticket, visit 'My Bookings', select your flight and click on 'Cancel'. Refunds are processed as per our policy.",
+          suggestions: [
+            { text: "Will I get a full refund?", response: "Refunds depend on the fare type. Some tickets are non-refundable while others offer partial/full refunds." },
+            { text: "How long does a refund take?", response: "Refunds are processed within 5-7 working days. You’ll receive updates via email/SMS." },
+            { text: "Can I cancel partially?", response: "Partial cancellations are allowed for some airlines. Please check 'Manage Booking' to see options." }
+          ]
+        },
+        {
+          keywords: ["check-in"],
+          response: "You can check in online from 48 hours to 60 minutes before departure via 'Manage Booking'.",
+          suggestions: [
+            { text: "Can I choose my seat during check-in?", response: "Yes! You can choose your seat during online check-in or even before through 'Manage Booking'." },
+            { text: "Do I need a printout?", response: "A digital boarding pass is enough, but a printout is recommended if you're carrying check-in baggage." }
+          ]
+        },
+        {
+          keywords: ["baggage", "luggage"],
+          response: "Each passenger is allowed 15 kg of check-in baggage and 7 kg of cabin baggage on domestic flights.",
+          suggestions: [
+            { text: "Can I carry extra baggage?", response: "Yes. You can pre-book excess baggage online for discounted rates or pay at the airport." },
+            { text: "Are power banks allowed?", response: "Power banks are allowed only in cabin baggage. They are prohibited in check-in baggage." }
+          ]
+        },
+        {
+          keywords: ["meal", "food", "eat"],
+          response: "Meals are available on select flights and can be pre-booked or purchased onboard.",
+          suggestions: [
+            { text: "Are vegetarian options available?", response: "Yes, vegetarian and special dietary meals are available. You can select them while booking or via 'Manage Booking'." },
+            { text: "Can I bring my own food?", response: "Yes, dry food items are generally allowed on board. Avoid liquid or strong-smelling food." }
+          ]
+        },
+        {
+          keywords: ["delay", "late", "reschedule"],
+          response: "We’re sorry for the inconvenience. If your flight is delayed, you'll receive updates via SMS or email.",
+          suggestions: [
+            { text: "Can I reschedule my flight?", response: "Yes, rescheduling is possible from 'Manage Booking' based on fare conditions." },
+            { text: "Will I get compensation?", response: "Compensation policies vary by airline and delay duration. Please check with support." }
+          ]
+        },
+        {
+          keywords: ["contact", "support", "help"],
+          response: "You can contact our support team 24/7 via call at 1800-123-4567 or email us at support@skyease.com.",
+          suggestions: [
+            { text: "Do you offer live chat support?", response: "Yes! Our live chat is available from 9am–9pm IST on the website Help & Support page." },
+            { text: "How can I raise a complaint?", response: "Go to 'Help & Support' > 'Raise a Complaint', or email us with your booking ID and issue details." }
+          ]
+        },
+      
+    {
+      keywords: ["book"],
+      response: "To book a flight, go to the 'Book Tickets' page, enter your travel details, select your flight, and proceed with payment.",
+      suggestions: [
+        { text: "Can I book round trips?", response: "Yes, round trip bookings are supported. Just choose 'Round Trip' on the booking page." },
+        { text: "What payment methods are accepted?", response: "We accept credit/debit cards, UPI, net banking, and wallets like PayTM & PhonePe." },
+        { text: "Can I choose my seat?", response: "Absolutely! You can select a seat during booking or via 'Manage Booking'." },
+        { text: "Is there a charge for seat selection?", response: "Some seats are free, but preferred or extra legroom seats may incur a fee." },
+        { text: "Can I upgrade my seat?", response: "Yes! Upgrades can be done during booking or at check-in based on availability." },
+        { text: "What if my selected seat is unavailable?", response: "In rare cases, seat changes may occur due to operational reasons. You’ll be notified." }
+      ]
+    },
+    {
+      keywords: ["payment", "fail", "money"],
+      response: "If your payment failed, don't worry. You can retry from 'Manage Booking' or contact support for help.",
+      suggestions: [
+        { text: "Payment failed, what now?", response: "If your payment failed, please wait a few minutes. If money was deducted, it will be refunded." },
+        { text: "How to retry payment?", response: "Go to 'My Bookings', select your flight, and click 'Retry Payment'." },
+        { text: "Is my money safe?", response: "Yes, if payment was deducted but the booking wasn't confirmed, it will be auto-refunded within 5-7 days." }
+      ]
+    },
+    {
+      keywords: ["cancel", "cancellation"],
+      response: "To cancel a ticket, visit 'My Bookings', select your flight and click on 'Cancel'. Refunds are processed as per our policy.",
+      suggestions: [
+        { text: "Will I get a full refund?", response: "Refunds depend on the fare type. Some tickets are non-refundable while others offer partial/full refunds." },
+        { text: "How long does a refund take?", response: "Refunds are processed within 5-7 working days. You’ll receive updates via email/SMS." },
+        { text: "Can I cancel partially?", response: "Partial cancellations are allowed for some airlines. Please check 'Manage Booking' to see options." },
+        { text: "What if the flight was canceled by the airline?", response: "In case of airline-initiated cancellations, a full refund is generally issued automatically." },
+        { text: "How is the refund calculated?", response: "Refunds are based on the fare rules and deductions if any. Taxes are usually fully refundable." },
+        { text: "Can I track my refund?", response: "Yes, go to 'My Bookings' and check the refund status for each canceled flight." }
+      ]
+    },
+    {
+      keywords: ["status", "delayed", "late", "reschedule"],
+      response: "Flight delays are updated in real time. Check your flight status using 'Flight Status'.",
+      suggestions: [
+        { text: "What if my flight is delayed?", response: "You will receive SMS and email notifications with updates and options to reschedule if available." },
+        { text: "How often is the status updated?", response: "Flight status is updated in real-time using live air traffic data and airline feeds." },
+        { text: "Can I get alerts?", response: "Yes, enable notifications when booking or opt-in under 'Manage Booking' to receive alerts." },
+        { text: "Is there a reschedule fee?", response: "Reschedule fees vary based on fare type. Some changes may be free if made early." },
+        { text: "How many times can I reschedule?", response: "Most tickets allow one or two free changes. Further changes may incur fees." },
+        { text: "Can I reschedule on the same day?", response: "Yes, if available. Charges may apply depending on the fare rules and time left before departure." }
+      ]
+    },
+    {
+      keywords: ["check-in"],
+      response: "You can check in online from 48 hours to 60 minutes before departure via 'Manage Booking'.",
+      suggestions: [
+        { text: "How to check-in?", response: "Go to 'Manage Booking' and click on 'Check-In'. Enter your booking ID and follow the prompts." },
+        { text: "Online check-in?", response: "Yes, online check-in is available and recommended. It saves time at the airport." },
+        { text: "Boarding process?", response: "After check-in, proceed to the boarding gate 45 minutes before departure with your ID and boarding pass." }
+      ]
+    },
+    {
+      keywords: ["boarding pass", "pass"],
+      response: "Your boarding pass will be available after online check-in.",
+      suggestions: [
+        { text: "Where is my boarding pass?", response: "It’s sent to your email or you can download it from 'Manage Booking'." },
+        { text: "Download boarding pass?", response: "Yes, log in to 'Manage Booking' and click 'Download Boarding Pass'." },
+        { text: "Do I need to print the boarding pass?", response: "A printed pass is not mandatory if you have a digital one, unless airport rules require it." },
+        { text: "How early should I check in?", response: "For domestic flights, arrive 2 hours early. For international, arrive 3 hours before departure." }
+      ]
+    },
+    {
+      keywords: ["baggage", "luggage"],
+      response: "Each passenger is allowed 15 kg of check-in baggage and 7 kg of cabin baggage on domestic flights.",
+      suggestions: [
+        { text: "What items are restricted?", response: "Sharp objects, explosives, flammable liquids, and aerosols are restricted in both baggage types." },
+        { text: "Can I buy extra baggage?", response: "Yes. Pre-book extra baggage online for cheaper rates or pay at the airport." },
+        { text: "Are there charges for excess baggage?", response: "Yes. Charges vary per kg based on the route and airline." }
+      ]
+    },
+    {
+      keywords: ["meal", "food"],
+      response: "Meals are available on select flights and can be pre-booked or purchased onboard.",
+      suggestions: [
+        { text: "Can I choose a vegetarian meal?", response: "Yes, vegetarian and special dietary meals are available. You can choose during booking." },
+        { text: "Is outside food allowed?", response: "Yes, dry snacks are usually allowed. Avoid liquids and strong-smelling food." },
+        { text: "What snacks are available?", response: "You can buy sandwiches, chips, cookies, and beverages onboard depending on the flight." }
+      ]
+    },
+    {
+      keywords: ["infant", "baby", "child"],
+      response: "Infants under 2 years can travel on an adult’s lap. Certain fees and documents may apply.",
+      suggestions: [
+        { text: "Is there an add-on fee for infants?", response: "Yes, a nominal fee is charged. Infants do not get their own seat." },
+        { text: "Can I bring a stroller?", response: "Yes. You can carry a foldable stroller to the boarding gate. It will be tagged and checked in." },
+        { text: "Are baby meals available?", response: "Some flights provide baby meals if pre-requested. Please check while booking." }
+      ]
+    },
+    {
+      keywords: ["wheelchair", "disabled", "assistance"],
+      response: "Wheelchair assistance is available for those who need it. Request it during or after booking.",
+      suggestions: [
+        { text: "Is wheelchair service free?", response: "Yes, for genuine needs. You can request it via 'Manage Booking' or at the airport." },
+        { text: "Can someone accompany me?", response: "Yes, airport staff will assist. A travel companion can also help during the journey." },
+        { text: "Where do I go at the airport?", response: "Visit the assistance desk at the entrance or ask airport staff for directions." }
+      ]
+    },
+    {
+      keywords: ["id", "identity", "document"],
+      response: "A government-issued ID is mandatory for all passengers. Children must also have valid ID.",
+      suggestions: [
+        { text: "Is Aadhaar card accepted?", response: "Yes, Aadhaar card is valid ID for domestic flights." },
+        { text: "What if my ID is expired?", response: "You must carry a valid, unexpired ID. Expired documents are not accepted." },
+        { text: "Do kids need ID?", response: "Yes, kids need a school ID, birth certificate, or any government-issued ID." }
+      ]
+    },
+    {
+      keywords: ["contact", "support", "help"],
+      response: "You can contact our support team 24/7 via call at 1800-123-4567 or email us at support@skyease.com.",
+      suggestions: [
+        { text: "Can I talk to a human?", response: "Yes! Call our helpline or request live chat via the Help page between 9am–9pm IST." },
+        { text: "Is chat support available?", response: "Yes! You can chat with us live from 9am–9pm IST daily." },
+        { text: "Where is the support center located?", response: "Our central support is online, but we operate offices in major cities for escalations." },
+        { text: "Contact support team?", response: "Sure! Call us at 1800-123-4567 or email support@skyease.com for any issue." }
+      ]
+    }
+  ];
+  
+  
+      const chatlog = document.getElementById("chatlog");
+  
+    function autoFill(text) {
+      document.getElementById("userInput").value = text;
+      sendMessage();
+    }
+  
+    function sendMessage() {
+      const userInput = document.getElementById("userInput").value.trim();
+      if (!userInput) return;
+  
+      appendMessage("user", userInput);
+      document.getElementById("userInput").value = "";
+  
+      const lowerInput = userInput.toLowerCase();
+      const matched = faqData.find(entry => entry.keywords.some(keyword => lowerInput.includes(keyword)));
+  
+      // Add typing indicator
+      const typingIndicator = document.createElement("div");
+      typingIndicator.className = "message bot typing";
+      typingIndicator.innerHTML = `<span class="dot"></span><span class="dot"></span><span class="dot"></span>`;
+      chatlog.appendChild(typingIndicator);
+      chatlog.scrollTop = chatlog.scrollHeight;
+  
+      setTimeout(() => {
+        typingIndicator.remove();
+  
+        if (matched) {
+          appendMessage("bot", matched.response, matched.suggestions);
+        } else {
+          appendMessage("bot", "I'm sorry, I didn't quite catch that. Try contact our support team. call us on :1800-123-4567 or email us at support@skyease.com.");
+        }
+      }, 1500); // Simulate typing delay
+    }
+  
+    function appendMessage(sender, text, suggestions = []) {
+      const messageDiv = document.createElement("div");
+      messageDiv.className = `message ${sender}`;
+      messageDiv.textContent = text;
+  
+      if (sender === "bot" && suggestions.length) {
+        suggestions.forEach(s => {
+          const btn = document.createElement("button");
+          btn.textContent = s.text;
+          btn.onclick = () => {
+            appendMessage("user", s.text);
+            setTimeout(() => appendMessage("bot", s.response), 600);
+          };
+          messageDiv.appendChild(document.createElement("br"));
+          messageDiv.appendChild(btn);
+        });
+      }
+  
+      chatlog.appendChild(messageDiv);
+      chatlog.scrollTop = chatlog.scrollHeight;
+    }
+  
+    // Enable Enter key to send
+    document.getElementById("userInput").addEventListener("keypress", function(event) {
+      if (event.key === "Enter") {
+        event.preventDefault();
+        sendMessage();
+      }
+    });
+  
+    </script>
+  </body>
+</html>

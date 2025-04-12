@@ -1,0 +1,55 @@
+/* App.css */
+body {
+    margin: 0;
+    padding: 0;
+    background: transparent;
+  }
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; 
+    padding-top: 120px;
+    height: 100vh;
+    font-family: sans-serif;
+
+  }
+  
+  .title {
+    font-size: 24px;
+    font-weight: bold;
+    color: black;
+    margin-bottom: 20px;
+  }
+  
+  .search-bar {
+    display: flex;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .pnr-input {
+    padding: 10px 15px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    width: 250px;
+    border-radius: 25px 0 0 25px;
+  }
+  
+  .search-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 0 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 0 25px 25px 0;
+  }
+  
+  .search-button:hover {
+    background-color: #0056b3;
+  }
+  
