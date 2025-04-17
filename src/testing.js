@@ -1,5 +1,5 @@
 
-export const TESTING_MODE = true;
+export const TESTING_MODE = false;
 
 const testUsers = [
   { username: "admin", password: "123" },

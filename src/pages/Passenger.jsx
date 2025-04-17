@@ -31,9 +31,9 @@ const Passenger = () => {
 
   // Total passengers
   const totalPassengers =
-    parseInt(searchPayload.adults || 0) +
-    parseInt(searchPayload.children || 0) +
-    parseInt(searchPayload.infants || 0);
+    parseInt(searchPayload?.adults || 0) +
+    parseInt(searchPayload?.children || 0) +
+    parseInt(searchPayload?.infants || 0);
 
     const grandTotal = Math.round((total * totalPassengers) * 100) / 100;
 

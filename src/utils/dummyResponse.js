@@ -1,33 +1,3 @@
-// src/utils/dummyResponse.js
-
-
-// export const dummyResponse = {
-//   flights: [
-//     {
-//       airline: 'IndiGo',
-//       airlineLogo: 'https://upload.wikimedia.org/wikipedia/en/8/88/IndiGo_Logo.svg',
-//       price: '₹5,200',
-//       priceValue: 5200,
-//       totalDuration: 120,
-//       stops: 0,
-//       legs: [
-//         {
-//           origin: 'DEL',
-//           destination: 'BOM',
-//           departure: '2025-04-10T08:00:00Z',
-//           arrival: '2025-04-10T10:00:00Z',
-//           durationInMinutes: 120,
-//           stopCount: 0
-//         }
-//       ]
-//     },
-//     // Add 9 more
-//   ],
-//   filters: {
-//     carriers: ['IndiGo', 'Air India', 'Vistara'],
-//     price: { min: 1000, max: 1500 }
-//   }
-// };
 
   
 export const dummyResponse = {

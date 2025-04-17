@@ -26,10 +26,11 @@ export const AuthProvider = ({ children }) => {
     }
   }, []);
 
-  const login = (token) => {
-    localStorage.setItem("token", token);
-    const decoded = jwtDecode(token);
-    setUser(decoded);
+  const login = (data) => {
+    // localStorage.setItem("token", token);
+    // const decoded = jwtDecode(token);
+    // console.log("decoded jwt", decoded);
+    setUser(data?.user);
     setRequireAuth(false);
   };
 
@@ -43,6 +44,7 @@ export const AuthProvider = ({ children }) => {
     <AuthContext.Provider
       value={{
         user,
+        setUser,
         login,
         logout,
         requireAuth,

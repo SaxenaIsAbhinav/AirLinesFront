@@ -8,6 +8,7 @@ import { TESTING_MODE, mockLogin } from "../testing";
 const AuthModal = () => {
   const {
     user,
+    setUser,
     login,
     requireAuth,
     setRequireAuth,
@@ -16,25 +17,27 @@ const AuthModal = () => {
   } = useAuth();
 
   const navigate = useNavigate();
-  const [form, setForm] = useState({ username: "", password: "" });
+  const [form, setForm] = useState({ emailId: "", password: "" });
 
   if (user || !requireAuth) return null;
 
-  const handleChange = (e) =>
+  const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (TESTING_MODE) {
-      const result = mockLogin(form.username, form.password);
+      const result = mockLogin(form.emailId, form.password);
       if (result) {
         login(result);
-        if (redirectTo) {
-          navigate(redirectTo);
-          setRedirectTo(null);
-        }
-      } else {
+        // setRedirectTo(null);
+        // if (redirectTo) {
+          navigate("/flights");
+          setRedirectTo("/flights");
+      }
+      else {
         alert("Invalid test credentials.");
       }
       return;
@@ -45,13 +48,22 @@ const AuthModal = () => {
       console.log("calling  auth/login ");
       
       const { data } = await axios.post("http://localhost:9555/auth/login", form);
+      console.log("data login", data);
+      console.log("user data", data?.user);
       login(data);
-      if (redirectTo) {
-        navigate(redirectTo);
-        setRedirectTo(null);
+      // setUser(data?.user);
+      // setRequireAuth(false);
+      if (data?.user) {
+        navigate("/");
+        console.log("inside if block")
+        setRedirectTo("/flights");
+      } else {
+        console.log("failing here")
       }
     } catch (e) {
+      console.log("e", e);
       alert("Authentication failed.");
+      setRequireAuth(true);
     }
   };
 
@@ -82,10 +94,10 @@ const AuthModal = () => {
 
         <form onSubmit={handleSubmit} className="space-y-4">
           <input
-            name="username"
-            value={form.username}
+            name="emailId"
+            value={form.emailId}
             onChange={handleChange}
-            placeholder="Username"
+            placeholder="email Id"
             className="w-full p-2 border rounded"
             required
           />

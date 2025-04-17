@@ -17,10 +17,10 @@ const ProfilePage = () => {
   const [profile, setProfile] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  const { passengerDetails } = useAuth(); // ✅ updated
+  const { user } = useAuth(); // ✅ updated
 
   useEffect(() => {
-    const email = passengerDetails?.emailId;
+    const email = user?.emailId;
 
     if (!email) {
       navigate('/');
@@ -29,15 +29,15 @@ const ProfilePage = () => {
 
     const fetchProfile = async () => {
       try {
-        const response = {data:{
-          "fullName": "zoii",
-          "age": "23",
-          "emailId": "abhi@com",
-          "mobileNumber": "9564567567",
-          "password": "Bangalore"
+      //   const response = {data:{
+      //     "fullName": "zoii",
+      //     "age": "23",
+      //     "emailId": "abhi@com",
+      //     "mobileNumber": "9564567567",
+      //     "password": "Bangalore"
           
-      }}
-      // const response = await axios.get(`http://localhost:9555/api/user/getPassengerDetails/${email}`);
+      // }}
+      const response = await axios.get(`http://localhost:9555/api/user/getPassengerDetails/${email}`);
         setProfile(response.data);
       } catch (error) {
         console.error('Failed to fetch profile', error);
@@ -47,7 +47,7 @@ const ProfilePage = () => {
     };
 
     fetchProfile();
-  }, [passengerDetails, navigate]);
+  }, [user, navigate]);
 
   if (loading) return (
     <Box display="flex" justifyContent="center" mt={5}>
